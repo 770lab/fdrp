@@ -1,14 +1,14 @@
-/* FDRP — démo 770LAB. Palette et typo reprises du site actuel du cabinet (Fraunces + Inter, crème / encre / laiton). */
+/* FDRP — démo 770LAB. Palette du site actuel (crème / encre / laiton) ; titres en Inter Tight, texte en Inter. Jamais Fraunces ni de serif « fantaisie » (propriétaire, 13/11/2026), jamais d italique. */
 :root{
   --bg:#f6f1e7; --bg-alt:#efe7d8; --fg:#211d17; --muted:#756e60; --accent:#a9752f; --accent-soft:rgba(169,117,47,.12);
   --line:rgba(33,29,23,.12); --ink:#16130f;
-  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --serif:"Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --gutter:max(20px, env(safe-area-inset-left, 0px));
   --nav-h:68px;
   --hero-x:max(20px, env(safe-area-inset-left, 0px), 4.4vw);
 }
-*,*::before,*::after{ box-sizing:border-box }
+*,*::before,*::after{ box-sizing:border-box; font-style:normal !important }
 [hidden]{ display:none !important }
 html{ -webkit-text-size-adjust:100% }
 body{ margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased }
@@ -16,8 +16,8 @@ img{ max-width:100%; display:block }
 a{ color:inherit }
 .shell{ max-width:1180px; margin:0 auto; padding-left:var(--gutter); padding-right:max(20px, env(safe-area-inset-right, 0px)) }
 .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); font-weight:600; margin:0 }
-.h2{ font-family:var(--serif); font-weight:500; font-size:clamp(30px, 4.4vw, 52px); line-height:1.08; margin:.35em 0 0; text-wrap:balance; letter-spacing:-.01em }
-.h2 em, .h1 em{ font-style:italic; font-weight:400; color:var(--accent) }
+.h2{ font-family:var(--serif); font-weight:600; font-size:clamp(30px, 4.4vw, 52px); line-height:1.08; margin:.35em 0 0; text-wrap:balance; letter-spacing:-.01em }
+.h2 em, .h1 em{ font-style:normal; color:var(--accent) }
 .btn{ display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:999px; background:var(--fg); color:var(--bg); text-decoration:none; font-weight:500; font-size:15px; white-space:nowrap; transition:transform .25s, background .25s }
 .btn:hover{ transform:translateY(-2px); background:var(--ink) }
 .btn-ghost{ background:transparent; color:var(--fg); border:1px solid var(--fg) }
@@ -33,7 +33,7 @@ a{ color:inherit }
 .nav.is-solid{ border-bottom-color:var(--line) }
 .nav .shell{ width:100%; max-width:none; padding-left:var(--hero-x); padding-right:var(--hero-x); display:flex; align-items:center; justify-content:space-between; gap:24px }
 .brand{ text-decoration:none; display:flex; flex-direction:column; line-height:1 }
-.brand b{ font-family:var(--serif); font-weight:600; font-size:24px; letter-spacing:.02em }
+.brand b{ font-family:var(--serif); font-weight:700; font-size:24px; letter-spacing:.02em }
 .brand b i{ color:var(--accent); font-style:normal }
 .brand span{ font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-top:5px }
 .nav-links{ display:flex; gap:28px; font-size:14.5px }
@@ -54,7 +54,7 @@ a{ color:inherit }
 .copy{ position:absolute; left:var(--hero-x); top:50%; transform:translateY(-50%); width:min(430px, 33vw); min-height:340px }
 .ph{ position:absolute; left:0; top:0; width:100%; display:flex; flex-direction:column; gap:16px; opacity:0; transform:translateY(14px); transition:opacity .45s ease, transform .55s cubic-bezier(.2,.7,.2,1); pointer-events:none }
 .ph.on{ opacity:1; transform:none; pointer-events:auto }
-.h1{ font-family:var(--serif); font-weight:500; font-size:clamp(38px, 5.2vw, 72px); line-height:1.02; letter-spacing:-.015em; margin:0; text-wrap:balance }
+.h1{ font-family:var(--serif); font-weight:600; font-size:clamp(38px, 5.2vw, 72px); line-height:1.02; letter-spacing:-.015em; margin:0; text-wrap:balance }
 .ph p.lead{ margin:0; color:var(--muted); font-size:17px; max-width:34ch }
 .chips{ display:flex; flex-wrap:wrap; gap:8px }
 .chips span{ font-size:13px; padding:6px 12px; border:1px solid rgba(169,117,47,.45); border-radius:999px; background:rgba(246,241,231,.75) }
