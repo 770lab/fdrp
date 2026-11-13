@@ -41,6 +41,7 @@ a{ color:inherit }
 .nav-links a:hover, .nav-links a.is-active{ border-bottom-color:var(--accent); color:var(--accent) }
 .nav-cta{ padding:10px 18px; font-size:14px }
 @media (max-width:860px){ .nav-links{ display:none } .nav-cta{ padding:9px 14px; font-size:13px } }
+.nav-cta{ gap:.28em }
 @media (max-width:520px){ .nav-cta .lg{ display:none } .brand b{ font-size:22px } .brand span{ font-size:8.5px; letter-spacing:.16em; white-space:nowrap } .eyebrow{ letter-spacing:.12em } }
 
 /* ===== HERO scroll-scrubbé ===== */
