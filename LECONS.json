@@ -9,6 +9,16 @@
       "cause": "Les titres étaient en Fraunces, une serif « fantaisie » avec de l’italique, que le propriétaire voit comme une police typique des sites faits par IA et qu’il déteste.",
       "lecon": "Pas de serif fantaisie (Fraunces, Playfair, Cormorant, DM/Instrument Serif) ni de Syne, et jamais d’italique : titres en Inter Tight, texte en Inter, comme 770lab.com.",
       "test": "tests/test_police.py"
+    },
+    {
+      "ref": "4538ad4bfb95",
+      "at": 1794930418326,
+      "genre": "bug",
+      "zone": "fdrp : hero (séquence au scroll), vue téléphone",
+      "famille": "contenu-cache-sur-telephone",
+      "cause": "En portrait, l’image du hero était recadrée sur toute la hauteur de l’écran : le scanner, dans la moitié basse de l’image, passait sous le voile crème et le texte ; le point de mire du 2e plan visait l’ordinateur.",
+      "lecon": "Sur téléphone, l’image du hero tient en entier dans la zone AU-DESSUS du texte (hauteur fixée par le CSS, lue par le script) ; le texte ne recouvre jamais l’image. Toute nouvelle séquence se vérifie à 360 et 412 px, aux 5 temps.",
+      "test": "tests/scanner-telephone.test.cjs"
     }
   ],
   "lecons_regles": {}

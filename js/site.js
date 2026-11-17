@@ -20,16 +20,17 @@
   var stage = $('#stage'), canvas = $('#seq'), ctx = canvas.getContext('2d'), poster = $('.poster');
   var frames = [], loaded = [], count = 0, pad = 3, ext = 'jpg', ver = '', dir = 'img/seq/';
   var cur = 0, target = 0, drawn = -1, dpr = Math.min(window.devicePixelRatio || 1, 2), W = 0, H = 0;
-  function resize() { W = stage.clientWidth; H = stage.clientHeight; canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr); canvas.style.width = W + 'px'; canvas.style.height = H + 'px'; drawn = -1; draw(); }
+  // la hauteur de l'image est celle de l'affiche, fixée par le CSS : tout l'écran sur ordinateur, la zone au-dessus du texte sur téléphone
+  function resize() { W = stage.clientWidth; H = poster.clientHeight || stage.clientHeight; canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr); canvas.style.width = W + 'px'; canvas.style.height = H + 'px'; drawn = -1; draw(); }
   function cover(img) {
     var iw = img.naturalWidth, ih = img.naturalHeight; if (!iw) return;
     var s = Math.max(W / iw, H / ih), dw = iw * s, dh = ih * s;
     var fx = W / H < 1.2 ? focus(drawing) : .5; // en portrait, on suit l'action plan par plan
     var x = clamp(W / 2 - dw * fx, W - dw, 0);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.drawImage(img, x, (H - dh) / 2, dw, dh);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H); ctx.drawImage(img, x, (H - dh) / 2, dw, dh);
   }
   // point de mire horizontal (fraction de la largeur de l'image) aux 5 plans clés : pluie de papiers, scanner, ruban caramel, écran du bilan, bilan relié
-  var FOCUS = [.6, .78, .66, .64, .58], drawing = 0;
+  var FOCUS = [.6, .58, .62, .65, .58], drawing = 0;
   function focus(i) { if (count < 2) return FOCUS[0]; var t = i / (count - 1) * (FOCUS.length - 1), k = Math.min(FOCUS.length - 2, Math.floor(t)), f = t - k; return FOCUS[k] + (FOCUS[k + 1] - FOCUS[k]) * f; }
   function nearestLoaded(i) { if (loaded[i]) return i; for (var d = 1; d < count; d++) { if (loaded[i - d]) return i - d; if (loaded[i + d]) return i + d; } return -1; }
   function draw() { if (!count) return; var i = nearestLoaded(Math.round(cur)); if (i < 0 || i === drawn) return; drawing = i; cover(frames[i]); drawn = i; stage.classList.add('has-seq'); }
