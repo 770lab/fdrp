@@ -26,11 +26,11 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:type" content="article">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23211d17'/%3E%3Ctext x='16' y='21.5' font-family='Georgia,serif' font-size='13' font-weight='700' fill='%23e1b874' text-anchor='middle'%3EFD%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233a2618'/%3E%3Ctext x='16' y='21.5' font-family='Georgia,serif' font-size='13' font-weight='700' fill='%23d6a360' text-anchor='middle'%3EFD%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/site.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css?v=3">
   <script type="application/ld+json">{jsonld}</script>
 </head>
 <body>
@@ -141,7 +141,7 @@ def hub(qs):
     out += (
         '  <main class="article">\n    <div class="shell" style="max-width:1180px">\n'
         '      <nav class="crumbs" aria-label="Fil d\'Ariane"><a href="../">Accueil</a><span>/</span><span>Vos questions</span></nav>\n'
-        '      <h1>Vos questions, <em style="font-style:italic;color:var(--accent);font-weight:400">nos réponses.</em></h1>\n'
+        '      <h1>Vos questions, <em style="color:var(--accent)">nos réponses.</em></h1>\n'
         '      <p class="meta" style="max-width:60ch;font-size:16px">Chaque semaine, une vraie question de client sur Instagram. Ici, la réponse complète, avec les références utiles.</p>\n'
         '      <div class="qgrid" style="margin-top:40px">\n'
         + "".join(card(q) for q in qs) +
