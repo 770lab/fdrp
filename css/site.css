@@ -69,7 +69,10 @@ a{ color:inherit }
 .hero.is-moving .scroll-hint{ opacity:0 }
 
 @media (orientation:portrait), (max-width:760px){
-  .scrim{ background:linear-gradient(0deg, rgba(236,226,208,.97) 0%, rgba(236,226,208,.9) 34%, rgba(236,226,208,0) 58%) }
+  /* téléphone : l'image entière (scanner compris) tient AU-DESSUS du texte, jamais dessous (réf. 4538ad4bfb95) */
+  .stage{ --txt:320px }
+  .stage .poster, .stage canvas{ height:calc(100% - var(--txt)); bottom:auto; object-position:60% 50% }
+  .scrim{ background:linear-gradient(0deg, rgb(236,226,208) 0, rgb(236,226,208) var(--txt), rgba(236,226,208,0) calc(var(--txt) + 44px)) }
   .copy{ top:auto; bottom:64px; transform:none; width:auto; right:max(20px, env(safe-area-inset-right, 0px)); min-height:230px }
   .ph{ top:auto; bottom:0; gap:12px }
   .h1{ font-size:clamp(32px, 9vw, 44px) }

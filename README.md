@@ -9,7 +9,8 @@ En ligne sur https://770lab.com/fdrp/ — **maquette non officielle** (noindex, 
 - `img/seq/manifest.json` : `count`, `pad`, `ext`, `v`. **Bumper `v`** dès qu'on remplace les images
   (Cloudflare et les navigateurs gardent 4 h les anciennes).
 - `js/site.js` : scrub au scroll sur canvas, 5 temps de texte, compteurs (500+, 20+, 9 = chiffres du site actuel).
-  En portrait, `FOCUS` recadre chaque plan sur l'action.
+  En portrait, `FOCUS` recadre chaque plan sur l'action, et l'image tient au-dessus du texte (`--txt` de `.stage`, `css/site.css`) :
+  le texte ne la recouvre jamais. Test : `node --test tests/scanner-telephone.test.cjs` (Playwright).
 - Vidéos sources : `~/fdrp-sources/` (hors dépôt).
 
 ## « Vos questions » (une publication Instagram = une page)
