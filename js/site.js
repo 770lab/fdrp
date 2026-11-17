@@ -1,4 +1,4 @@
-/* FDRP — démo 770LAB. Le scroll compile les papiers en bilan (séquence 241 images, 5 plans clés à p = 0 / .25 / .5 / .75 / 1). */
+/* FDRP — démo 770LAB. Au scroll : les factures tombent dans le scanner, qui les verse dans l'ordinateur, qui sort le bilan (séquence 241 images, 5 plans clés à p = 0 / .25 / .5 / .75 / 1). */
 (function () {
   'use strict';
   var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -28,8 +28,8 @@
     var x = clamp(W / 2 - dw * fx, W - dw, 0);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.drawImage(img, x, (H - dh) / 2, dw, dh);
   }
-  // point de mire horizontal (fraction de la largeur de l'image) aux 5 plans clés : papiers, pile, livre, bilan, étagère
-  var FOCUS = [.63, .68, .67, .68, .57], drawing = 0;
+  // point de mire horizontal (fraction de la largeur de l'image) aux 5 plans clés : pluie de papiers, scanner, ruban caramel, écran du bilan, bilan relié
+  var FOCUS = [.6, .78, .66, .64, .58], drawing = 0;
   function focus(i) { if (count < 2) return FOCUS[0]; var t = i / (count - 1) * (FOCUS.length - 1), k = Math.min(FOCUS.length - 2, Math.floor(t)), f = t - k; return FOCUS[k] + (FOCUS[k + 1] - FOCUS[k]) * f; }
   function nearestLoaded(i) { if (loaded[i]) return i; for (var d = 1; d < count; d++) { if (loaded[i - d]) return i - d; if (loaded[i + d]) return i + d; } return -1; }
   function draw() { if (!count) return; var i = nearestLoaded(Math.round(cur)); if (i < 0 || i === drawn) return; drawing = i; cover(frames[i]); drawn = i; stage.classList.add('has-seq'); }
@@ -90,7 +90,7 @@
   window.addEventListener('resize', function () { resize(); onScroll(); });
 
   resize(); updateNav();
-  if (REDUCED) { poster.src = 'img/keys/k5.jpg'; setPhase(4); }
+  if (REDUCED) { poster.src = 'img/keys/k5.jpg?v=2'; setPhase(4); }
   else fetch(dir + 'manifest.json?v=' + Date.now().toString(36).slice(0, -4)).then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
     if (!m || !m.count) { choreo(progress()); return; }
     count = m.count; pad = m.pad || 3; ext = m.ext || 'jpg'; ver = m.v || ''; frames = new Array(count); loaded = new Array(count);
