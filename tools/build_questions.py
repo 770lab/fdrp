@@ -26,11 +26,11 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:type" content="article">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233a2618'/%3E%3Ctext x='16' y='21.5' font-family='Georgia,serif' font-size='13' font-weight='700' fill='%23d6a360' text-anchor='middle'%3EFD%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233a2618'/%3E%3Ctext x='16' y='21.5' font-family='Inter Tight,Inter,Arial,sans-serif' font-size='13' font-weight='700' fill='%23d6a360' text-anchor='middle'%3EFD%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/site.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css?v=4">
   <script type="application/ld+json">{jsonld}</script>
 </head>
 <body>

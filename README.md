@@ -20,3 +20,7 @@ En ligne sur https://770lab.com/fdrp/ — **maquette non officielle** (noindex, 
 Chaque page : titre = la question, réponse courte, réponse développée, source officielle, JSON-LD `FAQPage`.
 À l'installation sur le domaine du cabinet : `INDEXABLE = True` et `SITE = "https://financieredurondpoint.com"`
 dans `tools/build_questions.py`, puis retirer le bandeau et le noindex de `index.html`.
+
+## Typographie
+Titres en **Inter Tight**, texte en **Inter**. Jamais Fraunces ni d'autre serif « fantaisie », jamais d'italique
+(propriétaire, 13/11/2026). Test : `python3 -m unittest discover -s tests`.

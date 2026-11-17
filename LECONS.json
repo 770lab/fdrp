@@ -1,0 +1,15 @@
+{
+  "lecons": [
+    {
+      "ref": "371a515994b2",
+      "at": 1794571591428,
+      "genre": "bug",
+      "zone": "fdrp : toute la page (titres)",
+      "famille": "police-ia-refusee",
+      "cause": "Les titres étaient en Fraunces, une serif « fantaisie » avec de l’italique, que le propriétaire voit comme une police typique des sites faits par IA et qu’il déteste.",
+      "lecon": "Pas de serif fantaisie (Fraunces, Playfair, Cormorant, DM/Instrument Serif) ni de Syne, et jamais d’italique : titres en Inter Tight, texte en Inter, comme 770lab.com.",
+      "test": "tests/test_police.py"
+    }
+  ],
+  "lecons_regles": {}
+}
